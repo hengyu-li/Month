@@ -1,6 +1,7 @@
-package com.lihengyu.cms.service;
+package com.lihengyu.cms.service.impl;
 
 import java.util.List;
+
 
 
 
@@ -14,6 +15,7 @@ import com.lhy.utils.StringUtil;
 import com.lihengyu.cms.dao.ArticleMapper;
 import com.lihengyu.cms.dao.ComplainMapper;
 import com.lihengyu.cms.domain.Complain;
+import com.lihengyu.cms.service.ComplainService;
 import com.lihengyu.cms.util.CMSException;
 import com.lihengyu.cms.vo.ComplainVO;
 @Service

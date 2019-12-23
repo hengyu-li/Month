@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lihengyu.cms.dao.SettingsMapper" >
-  <resultMap id="BaseResultMap" type="com.bobo.cms.domain.Settings" >
+  <resultMap id="BaseResultMap" type="com.lihengyu.cms.domain.Settings" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="site_domain" property="siteDomain" jdbcType="VARCHAR" />
     <result column="site_name" property="siteName" jdbcType="VARCHAR" />
@@ -23,7 +23,7 @@
     delete from cms_settings
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.bobo.cms.domain.Settings" >
+  <insert id="insert" parameterType="com.lihengyu.cms.domain.Settings" >
     insert into cms_settings (id, site_domain, site_name, 
       article_list_size, slide_size, admin_username, 
       admin_password)
@@ -31,7 +31,7 @@
       #{articleListSize,jdbcType=INTEGER}, #{slideSize,jdbcType=INTEGER}, #{adminUsername,jdbcType=VARCHAR}, 
       #{adminPassword,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.bobo.cms.domain.Settings" >
+  <insert id="insertSelective" parameterType="com.lihengyu.cms.domain.Settings" >
     insert into cms_settings
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.bobo.cms.domain.Settings" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.lihengyu.cms.domain.Settings" >
     update cms_settings
     <set >
       <if test="siteDomain != null" >
@@ -104,7 +104,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.bobo.cms.domain.Settings" >
+  <update id="updateByPrimaryKey" parameterType="com.lihengyu.cms.domain.Settings" >
     update cms_settings
     set site_domain = #{siteDomain,jdbcType=VARCHAR},
       site_name = #{siteName,jdbcType=VARCHAR},

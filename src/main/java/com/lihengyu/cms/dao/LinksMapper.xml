@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lihengyu.cms.dao.LinksMapper" >
-  <resultMap id="BaseResultMap" type="com.bobo.cms.domain.Links" >
+  <resultMap id="BaseResultMap" type="com.lihengyu.cms.domain.Links" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="text" property="text" jdbcType="VARCHAR" />
     <result column="url" property="url" jdbcType="VARCHAR" />
@@ -20,13 +20,13 @@
     delete from cms_links
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.bobo.cms.domain.Links" >
+  <insert id="insert" parameterType="com.lihengyu.cms.domain.Links" >
     insert into cms_links (id, text, url, 
       created)
     values (#{id,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
       #{created,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.bobo.cms.domain.Links" >
+  <insert id="insertSelective" parameterType="com.lihengyu.cms.domain.Links" >
     insert into cms_links
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.bobo.cms.domain.Links" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.lihengyu.cms.domain.Links" >
     update cms_links
     <set >
       <if test="text != null" >
@@ -72,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.bobo.cms.domain.Links" >
+  <update id="updateByPrimaryKey" parameterType="com.lihengyu.cms.domain.Links" >
     update cms_links
     set text = #{text,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},

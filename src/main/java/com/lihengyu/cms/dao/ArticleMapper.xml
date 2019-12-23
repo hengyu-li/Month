@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lihengyu.cms.dao.ArticleMapper" >
-  <resultMap id="BaseResultMap" type="com.bobo.cms.domain.Article" >
+  <resultMap id="BaseResultMap" type="com.lihengyu.cms.domain.Article" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="picture" property="picture" jdbcType="VARCHAR" />
@@ -21,13 +21,13 @@
  
   
     <!-- 封装单个对象. user -->
-    <association property="user" select="com.bobo.cms.dao.UserMapper.selectByPrimaryKey" column="user_id"></association>
-    <association property="channel" select="com.bobo.cms.dao.ChannelMapper.selectByPrimaryKey" column="channel_id"></association>
-    <association property="category" select="com.bobo.cms.dao.CategoryMapper.selectByPrimaryKey" column="category_id"></association>
+    <association property="user" select="com.lihengyu.cms.dao.UserMapper.selectByPrimaryKey" column="user_id"></association>
+    <association property="channel" select="com.lihengyu.cms.dao.ChannelMapper.selectByPrimaryKey" column="channel_id"></association>
+    <association property="category" select="com.lihengyu.cms.dao.CategoryMapper.selectByPrimaryKey" column="category_id"></association>
 
  
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.bobo.cms.domain.ArticleWithBLOBs" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.lihengyu.cms.domain.ArticleWithBLOBs" extends="BaseResultMap" >
     <result column="content" property="content" jdbcType="LONGVARCHAR" />
     <result column="summary" property="summary" jdbcType="LONGVARCHAR" />
   </resultMap>
@@ -96,7 +96,7 @@
     delete from cms_article
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.bobo.cms.domain.ArticleWithBLOBs" >
+  <insert id="insert" parameterType="com.lihengyu.cms.domain.ArticleWithBLOBs" >
     insert into cms_article (id, title, picture, 
       channel_id, category_id, user_id, 
       hits, hot, status, 
@@ -110,7 +110,7 @@
       #{contentType,jdbcType=INTEGER}, #{keywords,jdbcType=VARCHAR}, #{original,jdbcType=VARCHAR}, 
       #{content,jdbcType=LONGVARCHAR}, #{summary,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.bobo.cms.domain.ArticleWithBLOBs" >
+  <insert id="insertSelective" parameterType="com.lihengyu.cms.domain.ArticleWithBLOBs" >
     insert into cms_article
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -219,7 +219,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.bobo.cms.domain.ArticleWithBLOBs" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.lihengyu.cms.domain.ArticleWithBLOBs" >
     update cms_article
     <set >
       <if test="title != null" >
@@ -273,7 +273,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.bobo.cms.domain.ArticleWithBLOBs" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.lihengyu.cms.domain.ArticleWithBLOBs" >
     update cms_article
     set title = #{title,jdbcType=VARCHAR},
       picture = #{picture,jdbcType=VARCHAR},
@@ -293,7 +293,7 @@
       summary = #{summary,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.bobo.cms.domain.Article" >
+  <update id="updateByPrimaryKey" parameterType="com.lihengyu.cms.domain.Article" >
     update cms_article
     set title = #{title,jdbcType=VARCHAR},
       picture = #{picture,jdbcType=VARCHAR},

@@ -19,10 +19,10 @@
 		
 		<!-- 封装user -->
 		<association property="user" javaType="User"
-			select="com.bobo.cms.dao.UserMapper.selectByPrimaryKey"
+			select="com.lihengyu.cms.dao.UserMapper.selectByPrimaryKey"
 			column="user_id"></association>
 		<association property="article" javaType="Article"
-			select="com.bobo.cms.dao.ArticleMapper.selectByPrimaryKey"
+			select="com.lihengyu.cms.dao.ArticleMapper.selectByPrimaryKey"
 			column="article_id"></association>
 	</resultMap>
 

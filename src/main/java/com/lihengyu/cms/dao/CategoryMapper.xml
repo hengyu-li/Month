@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lihengyu.cms.dao.CategoryMapper" >
-  <resultMap id="BaseResultMap" type="com.bobo.cms.domain.Category" >
+  <resultMap id="BaseResultMap" type="com.lihengyu.cms.domain.Category" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="channel_id" property="channelId" jdbcType="INTEGER" />
@@ -26,13 +26,13 @@
     delete from cms_category
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.bobo.cms.domain.Category" >
+  <insert id="insert" parameterType="com.lihengyu.cms.domain.Category" >
     insert into cms_category (id, name, channel_id
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{channelId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.bobo.cms.domain.Category" >
+  <insert id="insertSelective" parameterType="com.lihengyu.cms.domain.Category" >
     insert into cms_category
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.bobo.cms.domain.Category" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.lihengyu.cms.domain.Category" >
     update cms_category
     <set >
       <if test="name != null" >
@@ -69,7 +69,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.bobo.cms.domain.Category" >
+  <update id="updateByPrimaryKey" parameterType="com.lihengyu.cms.domain.Category" >
     update cms_category
     set name = #{name,jdbcType=VARCHAR},
       channel_id = #{channelId,jdbcType=INTEGER}
