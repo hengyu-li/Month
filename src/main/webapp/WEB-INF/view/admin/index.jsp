@@ -14,7 +14,7 @@
 		<!-- header -->
 		<div class="row" style="height: 80px; margin-top: 8px">
 			<div class="col-md-12" style="background-color: #0073B7">
-				<img alt="" src="/resource/images/logo.png" height="80px"
+				<img alt="" src="/resource/images/ak.jpg" height="80px"
 					class="rounded-circle"><font color="white">CMS后台管理</font>
 					<span><font color="white"> 登录人:${sessionScope.admin.username }</font>
 					 <a href="/passport/logout">注销</a>
