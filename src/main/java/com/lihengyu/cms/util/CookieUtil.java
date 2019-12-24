@@ -1,5 +1,8 @@
 package com.lihengyu.cms.util;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import javax.servlet.http.Cookie;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,12 +19,18 @@ public class CookieUtil {
 
 	// 写入 cookie
 	public static void addCookie(HttpServletResponse response, String name, String value, int maxAge) {
-		Cookie cookie = new Cookie(name, value);
-		cookie.setPath("/");
-		if (maxAge > 0) {
-			cookie.setMaxAge(maxAge);//Cookie存活时间
+		try {
+			String valueEncode = URLEncoder.encode(value, "UTF-8");
+			Cookie cookie = new Cookie(name, valueEncode);
+			cookie.setPath("/");
+			if (maxAge > 0) {
+				cookie.setMaxAge(maxAge);//Cookie存活时间
+			}
+			response.addCookie(cookie);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		response.addCookie(cookie);
 	}
 	
 	// 从cookie获取值
