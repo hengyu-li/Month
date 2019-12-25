@@ -17,10 +17,7 @@ $(function(){
 	$("#typename").val('${complainVO.typename}');
 	
 	
-})
-	
-
-
+})	
  function goPage(page){
 	 //location.href="/user/selects?page="+page
 		var  url="/admin/article/complains?page="+page
@@ -53,7 +50,8 @@ $(function(){
 				<option>垃圾广告</option>
 				<option>政治反动</option>
 				<option>钓鱼网站</option>
-			</select> 投诉次数：<input class="form-control" type="text" name="startNum"
+			</select> 投诉次数：
+			<input class="form-control" type="text" name="startNum"
 				value="${complainVO.startNum}">-- <input
 				class="form-control" type="text" name="endNum"
 				value="${complainVO.endNum}">

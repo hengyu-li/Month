@@ -39,5 +39,4 @@ public class InsertTest {
 		System.out.println(complains);
 		service.insert(complains);
 	}
-
 }
