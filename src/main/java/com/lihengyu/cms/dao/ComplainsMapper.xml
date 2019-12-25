@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lihengyu.cms.dao.ComplainsMapper">
+	<resultMap type="complains" id="complainsMap">
+		<id property="id" column="id"/>
+		<result property="aid" column="aid"/>
+		<result property="uid" column="uid"/>
+		<result property="complaintype" column="complaintype"/>
+		<result property="urlip" column="urlip"/>
+		<result property="title" column="title"/>
+		<result property="image" column="image"/>
+		<result property="comment" column="comment"/>
+	</resultMap>
+	<select id="selects" resultMap="complainsMap">
+		select * from cms_complains
+	</select>
+	<insert id="insert">
+		insert into cms_complains set aid=#{aid},uid=#{uid},complaintype=#{complaintype},urlip=#{urlip},title=#{title},image=#{image},comment=#{comment}
+	</insert>
+</mapper>

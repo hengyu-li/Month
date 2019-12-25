@@ -214,7 +214,6 @@ public class Article implements Serializable {
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -231,5 +230,16 @@ public class Article implements Serializable {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Article [id=" + id + ", title=" + title + ", picture=" + picture + ", channelId=" + channelId
+				+ ", categoryId=" + categoryId + ", userId=" + userId + ", user=" + user + ", channel=" + channel
+				+ ", category=" + category + ", hits=" + hits + ", hot=" + hot + ", status=" + status + ", deleted="
+				+ deleted + ", created=" + created + ", updated=" + updated + ", contentType=" + contentType
+				+ ", keywords=" + keywords + ", original=" + original + ", complainNum=" + complainNum + "]";
+	}
+	
+	
 
 }

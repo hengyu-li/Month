@@ -55,4 +55,23 @@ public class Slide implements Serializable{
     public void setUrl(String url) {
         this.url = url == null ? null : url.trim();
     }
+    
+    
+
+	public Slide(Integer id, String title, String picture, String url) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.picture = picture;
+		this.url = url;
+	}
+
+	@Override
+	public String toString() {
+		return "Slide [id=" + id + ", title=" + title + ", picture=" + picture + ", url=" + url + "]";
+	}
+    
+    public Slide() {
+		// TODO Auto-generated constructor stub
+	}
 }

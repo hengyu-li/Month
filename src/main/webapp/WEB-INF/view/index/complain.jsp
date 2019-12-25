@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>举报</title>
+<title>投诉</title>
 <!-- 引入样式 -->
 <link href="/resource/css/bootstrap.css" rel="stylesheet">
 <script type="text/javascript" src="/resource/js/jquery-3.2.1.js"></script>

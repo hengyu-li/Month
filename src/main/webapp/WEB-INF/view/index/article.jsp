@@ -18,10 +18,8 @@
 </head>
 <body>
 	<div class="container">
-		<h1 align="center">${article.title }</h1>
-		<!-- 
-		<span style="float: right"><a href="/complain?id=${article.id }">举报</a></span>
-		 -->
+		<h1 align="center">${article.title}</h1>
+		<span style="float: right"><a href="/complain?id=${article.id }">投诉</a></span>
 
 		<h3>${a.user.username}
 			<fmt:formatDate value="${article.created }"

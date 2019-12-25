@@ -31,7 +31,7 @@
 						class="list-group-item list-group-item-action">发布文章</a> <a
 						href="#" class="list-group-item list-group-item-action">我的收藏</a>
 						<a
-						href="#" class="list-group-item list-group-item-action" data="/my/article/comments">我的評論</a>
+						href="#" class="list-group-item list-group-item-action" data="/my/article/comments">我的评论</a>
 						 <a
 						href="#" class="list-group-item list-group-item-action">用户设置</a> <a
 						href="#" class="list-group-item list-group-item-action disabled"
